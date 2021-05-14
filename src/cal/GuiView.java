@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 
 public class GuiView extends JFrame implements View {
+
     //days ofthe week
     private static final String[] DAY_NAMES = {"Sunday", "Monday", "Tuesday",
             "Wednesday", "Thursday", "Friday", "Saturday"};
@@ -91,6 +92,12 @@ public class GuiView extends JFrame implements View {
         JButton button = new JButton("Show Events");
         button.setFont(font);
         panel.add(button);
+        button.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent ae) {
+
+            }
+        });
 
         JButton create = new JButton("Create Events");
         create.setFont(font);
@@ -255,7 +262,10 @@ public class GuiView extends JFrame implements View {
 
     @Override
     public void showEvents(Iterable<Event> events) {
-        // TODO Auto-generated method stub
+        System.out.println("Events:");
+        for (Event event : events) {
+            System.out.println(events);
+        }
 
     }
 
