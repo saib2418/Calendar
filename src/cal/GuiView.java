@@ -28,7 +28,7 @@ public class GuiView extends JFrame implements View {
         this.calendarDate = LocalDate.now();
     }
 
-    @Override
+
     public void setup(Controller control) {
         JFrame frame = new JFrame("Calendar");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,24 +89,21 @@ public class GuiView extends JFrame implements View {
         yearField.setFont(font);
         yearField.setText(Integer.toString(calendarDate.getYear()));
         panel.add(yearField);
-        JButton button = new JButton("Show Events");
+        JButton button = new JButton("Create Event");
+        JButton events = new JButton("Events");
+        button.addActionListener(new CalendarListener());
         button.setFont(font);
         panel.add(button);
         button.addActionListener(new ActionListener() {
-
-            public void actionPerformed(ActionEvent ae) {
-
-            }
-        });
-
-        JButton create = new JButton("Create Events");
-        create.setFont(font);
-        panel.add(create);
-        create.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 new SecondFrame();
             }
         });
+
+
+        events.addActionListener(new CalendarListener());
+        events.setFont(font);
+        panel.add(events);
 
 
         JButton nextMonthButton = new JButton(">");
@@ -248,37 +245,15 @@ public class GuiView extends JFrame implements View {
         }
     }
 
-    @Override
     public void quit() {
-        // TODO Auto-generated method stub
 
     }
 
-    @Override
     public void addEvent() {
-        // TODO Auto-generated method stub
 
     }
 
-    @Override
     public void showEvents(Iterable<Event> events) {
-        System.out.println("Events:");
-        for (Event event : events) {
-            System.out.println(events);
-        }
 
     }
-
-    @Override
-    public void show() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void hide() {
-        // TODO Auto-generated method stub
-
-    }
-
 }

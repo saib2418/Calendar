@@ -30,11 +30,7 @@ public class SecondFrame implements View {
 
         save.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                eventName.getText();
-                dayOf.getText();
-                sTime.getText();
-                eTime.getText();
-
+                addEvent();
             }
         });
     }
